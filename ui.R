@@ -1,4 +1,5 @@
 library(shiny)
+
 # Define UI for application that draws a histogram
 fluidPage(
   
@@ -12,7 +13,8 @@ fluidPage(
                   "Number of bins:",
                   min = 1,
                   max = 100,
-                  value = 30)
+                  value = 30),
+      actionButton()
     ),
     
     # Show a plot of the generated distribution
@@ -20,5 +22,8 @@ fluidPage(
       plotOutput("distPlot")
     )
   )
+
 )
+
+
 
