@@ -13,7 +13,6 @@ fluidPage(
       
       hr(),
       fluidRow(column(3, verbatimTextOutput("value")))
-      
     ),
     
     # Show a plot of the generated distribution
