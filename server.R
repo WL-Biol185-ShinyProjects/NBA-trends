@@ -11,7 +11,13 @@ shinyServer(function(input, output) {
     
     # draw the histogram with the specified number of bins
     hist(x, breaks = bins, col = 'darkgray', border = 'white')
+  
     
   })
-  
+  function(input, output) {
+    
+    # You can access the value of the widget with input$text, e.g.
+    output$value <- renderPrint({ input$text })
+    
+  }
 })

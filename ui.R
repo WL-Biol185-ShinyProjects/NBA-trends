@@ -4,7 +4,7 @@ library(shiny)
 fluidPage(
   
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("NBA Plus/Minus Data"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
@@ -22,4 +22,6 @@ fluidPage(
       plotOutput("distPlot")
     )
   )
+  
+  
 )
