@@ -4,19 +4,16 @@ library(shiny)
 fluidPage(
   
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("NBA Plus/Minus Data"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30),
-
-      actionButton()
-
+      textInput("text", label = h3("Text input"), value = "Enter text..."),
+      
+      hr(),
+      fluidRow(column(3, verbatimTextOutput("value")))
+      
     ),
     
     # Show a plot of the generated distribution
@@ -24,4 +21,5 @@ fluidPage(
       plotOutput("distPlot")
     )
   )
+  
 )
