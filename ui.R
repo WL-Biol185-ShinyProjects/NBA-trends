@@ -20,6 +20,5 @@ fluidPage(
       plotOutput("distPlot")
     )
   )
-  ggplot(aes(Data$Season, Data$PlusMinusTotal)) + geom_point()
   
 )
