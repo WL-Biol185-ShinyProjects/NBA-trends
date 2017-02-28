@@ -9,12 +9,10 @@ fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 100,
-                  value = 30),
-      actionButton()
+      textInput("text", label = h3("Text input"), value = "Enter text..."),
+      
+      hr(),
+      fluidRow(column(3, verbatimTextOutput("value")))
     ),
     
     # Show a plot of the generated distribution
@@ -22,6 +20,6 @@ fluidPage(
       plotOutput("distPlot")
     )
   )
-  s
+  ggplot(aes(Data$Season, Data$PlusMinusTotal)) + geom_point()
   
 )
