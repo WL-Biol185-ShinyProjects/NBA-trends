@@ -13,7 +13,11 @@ fluidPage(
                   "Number of bins:",
                   min = 1,
                   max = 100,
+<<<<<<< HEAD
                   value = 30),
+=======
+                  value = 30)
+>>>>>>> 2e9266e5654b2021916e12f558f006299a38028d
       actionButton()
     ),
     
