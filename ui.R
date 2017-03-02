@@ -9,7 +9,7 @@ fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      textInput("text", label = h3("Text input"), value = "Enter text..."),
+      textInput("text", label = h3("Input Player Name"), value = "Enter player name here"),
       
       hr(),
       fluidRow(column(3, verbatimTextOutput("value")))
