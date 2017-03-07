@@ -5,11 +5,12 @@ shinyServer(function(input, output) {
   
   output$Player<- renderPrint({input$Player})
   output$Season <- renderPrint({ input$Season})
-  output$Team <- renderPrint({ input$checkGroup })
+  output$Team <- renderPrint({ input$Team })
   output$PPG <- renderPrint({ input$PPG })
   output$PlusMinus <- renderPrint({ input$PlusMinus })
   output$FGPer <- renderPrint({ input$FGPer })
   output$ThreePtPer <- renderPrint({ input$ThreePtPer })
   output$All <- renderPrint({ input$All })
+
 })
   
