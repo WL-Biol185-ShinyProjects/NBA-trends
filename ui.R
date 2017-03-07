@@ -10,17 +10,16 @@ fluidPage(
   sidebarLayout(
     sidebarPanel(
 
-      textInput("Player", label = h3("Input Player Name"), value = "Enter player name here"),
-         # hr(),
-         #fluidRow(column(3, verbatimTextOutput("value")))
+        textInput("Player", label = h3("Input Player Name"), value = "Enter player name here"),
+       
 
-       sliderInput("Season", label = h3("Season Selection"), min = 1996, 
+        sliderInput("Season", label = h3("Season Selection"), min = 1996, 
                          max = 2016, value = c(2010,2016)),
-        
-        checkboxGroupInput("Team", label = h3("Select Team"), 
-                         choices = list(Data$Team),
-                         selected = "GS")
 
+      
+        checkboxGroupInput("Team", label = h3("Select Team"), 
+                         choices = (Data$Team),
+                         selected = "GS")
 
     ),
  
