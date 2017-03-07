@@ -6,15 +6,11 @@ shinyServer(function(input, output) {
   output$Player<- renderPrint({input$Player})
   output$Season <- renderPrint({ input$Season})
   output$Team <- renderPrint({ input$checkGroup })
-
-  
-  })
-  function(input, output) {
-    
-    # You can access the value of the widget with input$text, e.g.
-    output$value <- renderPrint({ input$text })
-    
-  }
-  
+  output$value <- renderPrint({ input$PPG })
+  output$value <- renderPrint({ input$PlusMinus })
+  output$value <- renderPrint({ input$FGPer })
+  output$value <- renderPrint({ input$ThreePrPer })
+  output$value <- renderPrint({ input$PPG })
+  output$value <- renderPrint({ input$All })
 })
   
