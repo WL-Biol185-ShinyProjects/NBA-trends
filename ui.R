@@ -57,7 +57,7 @@ fluidPage(
       actionButton("ThreePtA", label = "Three Point Attempt"),
       actionButton("ThreePtM", label = "Three Point Made"),
       actionButton("FGA", label = "Field Goal Attempt"),
-      actionButton("FGM", label = "Field Goal Misses")
+      actionButton("FGM", label = "Field Goal Made")
 
     )
   )
