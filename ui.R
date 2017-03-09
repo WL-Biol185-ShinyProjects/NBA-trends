@@ -60,8 +60,12 @@ fluidPage(
       plotOutput("NBAplot"), 
       
       selectInput("XInput", label="X Input", choices = list()),
-      selectInput("YInput", label="Y Input", choices = list())
+      selectInput("YInput", label="Y Input", choices = list()),
  
+
+      actionButton("FGM", label = "Field Goal Made")
+
+
     )
   )
 
