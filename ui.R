@@ -45,7 +45,19 @@ fluidPage(
       actionButton("TD3", label = "Triple Double"),
       actionButton("PF", label = "Personal Foul"),
       actionButton("BLK", label = "Blocks"),
-      actionButton("STL", "Steals")
+      actionButton("STL", "Steals"),
+      actionButton("TOV", label = "Turnovers"),
+      actionButton("AST", label = "Assists"),
+      actionButton("REB", label = "Rebounds"),
+      actionButton("DREB", label = "Defensive Rebounds"),
+      actionButton("OREB", label = "Offensive Rebounds"),
+      actionButton("FT", label = "Free Throw Percentage"),
+      actionButton("FTA", label = "Free Throw Attempts"),
+      actionButton("FTM", label = "Free Throw Made"),
+      actionButton("ThreePtA", label = "Three Point Attempt"),
+      actionButton("ThreePtM", label = "Three Point Made"),
+      actionButton("FGA", label = "Field Goal Attempt"),
+      actionButton("FGM", label = "Field Goal Misses")
 
     )
   )
