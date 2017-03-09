@@ -20,6 +20,10 @@ fluidPage(
         
         checkboxGroupInput("Team", label = h3("Select Team"),
                            choices = list("ATL" = 1, "BKN" = 2, "BOS" = 3, "CHA" = 4, "CHI" = 5, "CLE" = 6, "DAL" = 7, "DEN" = 8, "DET" = 9, "GSW" = 10, "HOU" = 11, "IND" = 12, "LAC" = 13, "LAL" = 14, "MEM" = 15, "MIA" = 16, "MIL" = 17, "MIN" = 18, "NOP" = 19, "NYK"= 20, "OKC"= 21, "ORL" = 22, "PHI" = 23, "PHX" = 24, "POR" = 25, "SAC" = 26, "SAS" = 27, "TOR" = 28, "UTA" = 29, "WAS" = 30 ),
+                           selected = 1),
+        
+        checkboxGroupInput("Position", label = h3("Select Position"),
+                           choices = list("Center" = 1, "Guard" = 2,"Small Forward" = 35),
                            selected = 1)
         
     ),
@@ -30,7 +34,7 @@ fluidPage(
       actionButton("PlusMinus", label = "Plus/Minus Score"),
       actionButton("FGPer", label = "Field Goal Percentage"),
       actionButton("ThreePtPer", label = "Three Point Percentage"),
-      actionButton("Salary", label = "Salary")
+      plotOutput('NBAplot')
       
     )
   )
