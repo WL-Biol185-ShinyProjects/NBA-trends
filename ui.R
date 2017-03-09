@@ -34,8 +34,19 @@ fluidPage(
       actionButton("PlusMinus", label = "Plus/Minus Score"),
       actionButton("FGPer", label = "Field Goal Percentage"),
       actionButton("ThreePtPer", label = "Three Point Percentage"),
-      plotOutput('NBAplot')
-      
+      plotOutput('NBAplot'),
+      actionButton("Salary", label = "Salary"),
+      actionButton("Age", label = "Age"),
+      actionButton("GP", label = "Games Played"),
+      actionButton("W", label = "Wins"),
+      actionButton("L", label = "Losses"),
+      actionButton("MIN", label = "Average Minutes Played per Game"),
+      actionButton("DD2", label = "Double Double"),
+      actionButton("TD3", label = "Triple Double"),
+      actionButton("PF", label = "Personal Foul"),
+      actionButton("BLK", label = "Blocks"),
+      actionButton("STL", "Steals")
+
     )
   )
 
