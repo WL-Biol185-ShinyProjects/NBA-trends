@@ -18,9 +18,9 @@ fluidPage(
                          max = 2016, value = c(2010,2016)),
 
         
-        checkboxGroupInput("Team", label = h3("Select Team"),
+        selectInput("Team", label = h3("Select Team"),
                            choices = list("ATL" = 1, "BKN" = 2, "BOS" = 3, "CHA" = 4, "CHI" = 5, "CLE" = 6, "DAL" = 7, "DEN" = 8, "DET" = 9, "GSW" = 10, "HOU" = 11, "IND" = 12, "LAC" = 13, "LAL" = 14, "MEM" = 15, "MIA" = 16, "MIL" = 17, "MIN" = 18, "NOP" = 19, "NYK"= 20, "OKC"= 21, "ORL" = 22, "PHI" = 23, "PHX" = 24, "POR" = 25, "SAC" = 26, "SAS" = 27, "TOR" = 28, "UTA" = 29, "WAS" = 30 ),
-                           selected = 1),
+                           selected = 1, multiple = TRUE),
         
         checkboxGroupInput("Position", label = h3("Select Position"),
                            choices = list("Center" = 1, "Guard" = 2,"Small Forward" = 35),
@@ -59,7 +59,7 @@ fluidPage(
   
       plotOutput("NBAplot"), 
       
-      selectInput("XInput", label="X Input", choices = list()),
+      selectInput("XInput", label="X Input", choices = list("AGE"=1, "GP" = 2, "W"=3, "L" =4, "MIN"=5, "DD2"=6)),
       selectInput("YInput", label="Y Input", choices = list()),
  
 

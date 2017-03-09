@@ -15,8 +15,7 @@ shinyServer(function(input, output) {
   output$YInput <- renderPrint({input$YInput})
   
   
-  
-  output$NBAplot <- renderPlot({ggplot(data=fullStats, aes(AGE,PTS))+geom_point()})
+  output$NBAplot <- renderPlot({ggplot(data=fullStats, aes(XInput,PTS))+geom_point()})
 
 })
   
