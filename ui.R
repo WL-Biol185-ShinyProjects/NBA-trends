@@ -30,12 +30,6 @@ fluidPage(
   
     mainPanel(
  
-      actionButton("PPG", label = "Points Per Game"),
-      actionButton("PlusMinus", label = "Plus/Minus Score"),
-      actionButton("FGPer", label = "Field Goal Percentage"),
-      actionButton("ThreePtPer", label = "Three Point Percentage"),
-      plotOutput('NBAplot'),
-      actionButton("Salary", label = "Salary"),
       actionButton("Age", label = "Age"),
       actionButton("GP", label = "Games Played"),
       actionButton("W", label = "Wins"),
@@ -57,8 +51,17 @@ fluidPage(
       actionButton("ThreePtA", label = "Three Point Attempt"),
       actionButton("ThreePtM", label = "Three Point Made"),
       actionButton("FGA", label = "Field Goal Attempt"),
-      actionButton("FGM", label = "Field Goal Misses")
-
+      actionButton("FGM", label = "Field Goal Misses"),
+      actionButton("PPG", label = "Points Per Game"),
+      actionButton("PlusMinus", label = "Plus/Minus Score"),
+      actionButton("FGPer", label = "Field Goal Percentage"),
+      actionButton("ThreePtPer", label = "Three Point Percentage"),
+  
+      plotOutput("NBAplot"), 
+      
+      selectInput("XInput", label="X Input", choices = list()),
+      selectInput("YInput", label="Y Input", choices = list())
+ 
     )
   )
 

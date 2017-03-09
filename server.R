@@ -11,7 +11,12 @@ shinyServer(function(input, output) {
   output$FGPer <- renderPrint({ input$FGPer })
   output$ThreePtPer <- renderPrint({ input$ThreePtPer})
   output$All <- renderPrint({ input$All})
-  NBAplot<-renderPlot({ggplot(data=fullStats, aes(SEASON, PTS))+geom_point()})
+  output$XInput <- renderPrint({input$XInput})
+  output$YInput <- renderPrint({input$YInput})
+  
+  
+  
+  output$NBAplot <- renderPlot({ggplot(data=fullStats, aes(AGE,PTS))+geom_point()})
 
 })
   
