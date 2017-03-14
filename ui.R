@@ -18,11 +18,11 @@ fluidPage(
 
         
         selectInput("Team", label = h3("Select Team"),
-                           choices = list("ATL" = 1, "BKN" = 2, "BOS" = 3, "CHA" = 4, "CHI" = 5, "CLE" = 6, "DAL" = 7, "DEN" = 8, "DET" = 9, "GSW" = 10, "HOU" = 11, "IND" = 12, "LAC" = 13, "LAL" = 14, "MEM" = 15, "MIA" = 16, "MIL" = 17, "MIN" = 18, "NOP" = 19, "NYK"= 20, "OKC"= 21, "ORL" = 22, "PHI" = 23, "PHX" = 24, "POR" = 25, "SAC" = 26, "SAS" = 27, "TOR" = 28, "UTA" = 29, "WAS" = 30 ),
+                           choices = list("ATL" = "ATL", "BKN" = "BKN", "BOS" = "BOS", "CHA" = "CHA", "CHI" = "CHI", "CLE" = "CLE", "DAL" = "DAL", "DEN" = "DEN", "DET" = "DET", "GSW" = "GSW", "HOU" = 11, "IND" = 12, "LAC" = 13, "LAL" = 14, "MEM" = 15, "MIA" = 16, "MIL" = 17, "MIN" = 18, "NOP" = 19, "NYK"= 20, "OKC"= 21, "ORL" = 22, "PHI" = 23, "PHX" = 24, "POR" = 25, "SAC" = 26, "SAS" = 27, "TOR" = 28, "UTA" = 29, "WAS" = 30 ),
                            selected = 1, multiple = TRUE),
         
         checkboxGroupInput("Position", label = h3("Select Position"),
-                           choices = list("Center" = 1, "Guard" = 2,"Small Forward" = 35),
+                           choices = list("Center" = "C", "Guard" = "G","Small Forward" = "F"),
                            selected = 1)
         
     
@@ -32,13 +32,13 @@ fluidPage(
  
       plotOutput("NBAplot"), 
       
-      selectInput("XInput", label="X Input", choices = list("Age"=1, "Games Played" = 2, "Wins"=3, "Losses" =4, "Average Minutes Per Game"=5, "Double Doubles"=6, "Triple Doubles"=7, "Personal Fouls"=8, "Bocks"=9, "Steals"=9, "Turnovers"=10, "Assists"=11, "Rebounds"=12, "Defensive Rebounds"=13, "Offensive Rebounds"=13,"Free Throw Percentage"=14, "Free Throw Attempts"=15, "Free Throws Made"=16, "Three Point Attempts"=17, "Three Point Made"=18, "Field Goal Attempt"=19, "Field Goal Misses"=20, "Average Points Per Game"=21, "Plus/Minus Score"=22, "Field Goal Percentage"=23, "Three Point Percentage"=24)), 
-      selectInput("YInput", label="Y Input", choices = list("Age"=1, "Games Played" = 2, "Wins"=3, "Losses" =4, "Average Minutes Per Game"=5, "Double Doubles"=6, "Triple Doubles"=7, "Personal Fouls"=8, "Bocks"=9, "Steals"=9, "Turnovers"=10, "Assists"=11, "Rebounds"=12, "Defensive Rebounds"=13, "Offensive Rebounds"=13,"Free Throw Percentage"=14, "Free Throw Attempts"=15, "Free Throws Made"=16, "Three Point Attempts"=17, "Three Point Made"=18, "Field Goal Attempt"=19, "Field Goal Misses"=20, "Average Points Per Game"=21, "Plus/Minus Score"=22, "Field Goal Percentage"=23, "Three Point Percentage"=24))
-
-  )
+      selectInput("XInput", label="X Input", choices = list("Age"="AGE", "Games Played" = "GP", "Wins"="W", "Losses" ="L", "Average Minutes Per Game"="MIN", "Double Doubles"="DD2", "Triple Doubles"="TD2", "Personal Fouls"="PF", "Blocks"="BLK", "Steals"="STL", "Turnovers"="TOV", "Assists"="AST", "Rebounds"="REB", "Defensive Rebounds"="DREB", "Offensive Rebounds"="OREB","Free Throw Percentage"="FT%", "Free Throw Attempts"="FTA", "Free Throws Made"="FTM", "Three Point Attempts"="3PA", "Three Point Made"="3PM", "Field Goal Attempt"="FGA", "Field Goal Misses"="FGM", "Average Points Per Game"="FG%", "Plus/Minus Score"="PLUSMINUS", "Field Goal Percentage"="FG%", "Three Point Percentage"="3P%")), 
+      selectInput("YInput", label="Y Input", choices = list("Age"="AGE", "Games Played" = "GP", "Wins"="W", "Losses" ="L", "Average Minutes Per Game"="MIN", "Double Doubles"="DD2", "Triple Doubles"="TD2", "Personal Fouls"="PF", "Blocks"="BLK", "Steals"="STL", "Turnovers"="TOV", "Assists"="AST", "Rebounds"="REB", "Defensive Rebounds"="DREB", "Offensive Rebounds"="OREB","Free Throw Percentage"="FT%", "Free Throw Attempts"="FTA", "Free Throws Made"="FTM", "Three Point Attempts"="3PA", "Three Point Made"="3PM", "Field Goal Attempt"="FGA", "Field Goal Misses"="FGM", "Average Points Per Game"="FG%", "Plus/Minus Score"="PLUSMINUS", "Field Goal Percentage"="FG%", "Three Point Percentage"="3P%")),
+      selectInput("ColorBy", label="Color By:", choices = list("Position"="POSITION", "Team"= "TEAM", "Season"="SEASON", "Age"="AGE", "Games Played" = "GP", "Wins"="W", "Losses" ="L", "Average Minutes Per Game"="MIN", "Double Doubles"="DD2", "Triple Doubles"="TD2", "Personal Fouls"="PF", "Blocks"="BLK", "Steals"="STL", "Turnovers"="TOV", "Assists"="AST", "Rebounds"="REB", "Defensive Rebounds"="DREB", "Offensive Rebounds"="OREB","Free Throw Percentage"="FT%", "Free Throw Attempts"="FTA", "Free Throws Made"="FTM", "Three Point Attempts"="3PA", "Three Point Made"="3PM", "Field Goal Attempt"="FGA", "Field Goal Misses"="FGM", "Average Points Per Game"="FG%", "Plus/Minus Score"="PLUSMINUS", "Field Goal Percentage"="FG%", "Three Point Percentage"="3P%"))
+  
 )
 )
-
+)
   
 
 
