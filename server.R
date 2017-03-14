@@ -3,19 +3,20 @@ library(shiny)
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   
-  output$Player<- renderPrint({input$Player})
-  output$Season <- renderPrint({ input$Season})
-  output$Team <- renderPrint({ input$Team})
-  output$PPG <- renderPrint({ input$PPG })
-  output$PlusMinus <- renderPrint({ input$PlusMinus})
-  output$FGPer <- renderPrint({ input$FGPer })
-  output$ThreePtPer <- renderPrint({ input$ThreePtPer})
-  output$All <- renderPrint({ input$All})
-  output$XInput <- renderPrint({input$XInput})
-  output$YInput <- renderPrint({input$YInput})
-  
-  
-  output$NBAplot <- renderPlot({ggplot(data=fullStats, aes(XInput,PTS))+geom_point()})
 
+  output$NBAplot <- renderPlot({ggplot(data=fullStats, aes(input$XInput, input$YInput))+geom_point()})
+
+  
+  output$NBAplot <- renderPlot({
+    if(input$XInput == "Age"){
+     ggplot(data=fullStats, aes(AGE, GP)) + 
+        geom_point()
+    }
+    
+    
+ 
+    
+})
+  
 })
   

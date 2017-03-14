@@ -6,7 +6,6 @@ fluidPage(
   # Application title
   titlePanel("Filter by"),
   
-  # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
         actionButton("All", label = "All"),
@@ -26,50 +25,18 @@ fluidPage(
                            choices = list("Center" = 1, "Guard" = 2,"Small Forward" = 35),
                            selected = 1)
         
-    ),
+    
+  ),
   
     mainPanel(
  
-      actionButton("Age", label = "Age"),
-      actionButton("GP", label = "Games Played"),
-      actionButton("W", label = "Wins"),
-      actionButton("L", label = "Losses"),
-      actionButton("MIN", label = "Average Minutes Played per Game"),
-      actionButton("DD2", label = "Double Double"),
-      actionButton("TD3", label = "Triple Double"),
-      actionButton("PF", label = "Personal Foul"),
-      actionButton("BLK", label = "Blocks"),
-      actionButton("STL", "Steals"),
-      actionButton("TOV", label = "Turnovers"),
-      actionButton("AST", label = "Assists"),
-      actionButton("REB", label = "Rebounds"),
-      actionButton("DREB", label = "Defensive Rebounds"),
-      actionButton("OREB", label = "Offensive Rebounds"),
-      actionButton("FT", label = "Free Throw Percentage"),
-      actionButton("FTA", label = "Free Throw Attempts"),
-      actionButton("FTM", label = "Free Throw Made"),
-      actionButton("ThreePtA", label = "Three Point Attempt"),
-      actionButton("ThreePtM", label = "Three Point Made"),
-      actionButton("FGA", label = "Field Goal Attempt"),
-      actionButton("FGM", label = "Field Goal Misses"),
-      actionButton("PPG", label = "Points Per Game"),
-      actionButton("PlusMinus", label = "Plus/Minus Score"),
-      actionButton("FGPer", label = "Field Goal Percentage"),
-      actionButton("ThreePtPer", label = "Three Point Percentage"),
-  
       plotOutput("NBAplot"), 
       
-      selectInput("XInput", label="X Input", choices = list("AGE"=1, "GP" = 2, "W"=3, "L" =4, "MIN"=5, "DD2"=6)),
-      selectInput("YInput", label="Y Input", choices = list()),
- 
+      selectInput("XInput", label="X Input", choices = list("Age"=1, "Games Played" = 2, "Wins"=3, "Losses" =4, "Average Minutes Per Game"=5, "Double Doubles"=6, "Triple Doubles"=7, "Personal Fouls"=8, "Bocks"=9, "Steals"=9, "Turnovers"=10, "Assists"=11, "Rebounds"=12, "Defensive Rebounds"=13, "Offensive Rebounds"=13,"Free Throw Percentage"=14, "Free Throw Attempts"=15, "Free Throws Made"=16, "Three Point Attempts"=17, "Three Point Made"=18, "Field Goal Attempt"=19, "Field Goal Misses"=20, "Average Points Per Game"=21, "Plus/Minus Score"=22, "Field Goal Percentage"=23, "Three Point Percentage"=24)), 
+      selectInput("YInput", label="Y Input", choices = list("Age"=1, "Games Played" = 2, "Wins"=3, "Losses" =4, "Average Minutes Per Game"=5, "Double Doubles"=6, "Triple Doubles"=7, "Personal Fouls"=8, "Bocks"=9, "Steals"=9, "Turnovers"=10, "Assists"=11, "Rebounds"=12, "Defensive Rebounds"=13, "Offensive Rebounds"=13,"Free Throw Percentage"=14, "Free Throw Attempts"=15, "Free Throws Made"=16, "Three Point Attempts"=17, "Three Point Made"=18, "Field Goal Attempt"=19, "Field Goal Misses"=20, "Average Points Per Game"=21, "Plus/Minus Score"=22, "Field Goal Percentage"=23, "Three Point Percentage"=24))
 
-      actionButton("FGM", label = "Field Goal Made")
-
-
-    )
   )
-
-
+)
 )
 
   
