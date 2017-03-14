@@ -4,7 +4,7 @@ library(shiny)
 shinyServer(function(input, output) 
   
  
-  output$NBAplot <- renderPlot({ggplot(data=fullStats, aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()})
+  output$NBAplot <- renderPlot({ggplot(data=fullStats, aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth()})
 
 ) 
   
