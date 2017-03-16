@@ -5,13 +5,15 @@ shinyServer(function(input, output)
   
   
   if(input$Player==""){
-    player<-fullStats$PLAYER
+    player<-unique(data.frame(fullStats$PLAYER))
   } else{
-    player<-players<-input$Player
-  }
+    player<-input$Player
+  } 
   
   fullStats %>%
     filter(player %in% fullStats$PLAYER),
+  
+  fullStats %>%
 
    output$NBAplot <- renderPlot({ggplot(data=fullStats, aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth()})
 
