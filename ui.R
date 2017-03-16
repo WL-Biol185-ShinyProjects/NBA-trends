@@ -10,7 +10,7 @@ fluidPage(
     sidebarPanel(
         actionButton("All", label = "All"),
 
-        textInput("Player", label = h3("Select Player"), value = "Enter player name here"),
+        selectizeInput("Player", label = h3("Select Player"), selected=NULL, multiple=TRUE, choices=fullStats$PLAYER),
        
 
         sliderInput("Season", label = h3("Select Season"), sep = "", min = 1996, 
