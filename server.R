@@ -8,13 +8,13 @@ function(input, output){
      renderPlot({
        
        if(input$Player == ""){
-         player <- fullStats$PLAYER
+         player <- unique(data.frame(fullStats$PLAYER))
        } else {
          player <- input$Player
        }
        
        if(input$Team == ""){
-         team <- fullStats$TEAM
+         team <- unqique(data.frame(fullStats$TEAM))
        } else {
          team <- input$Team
        }
