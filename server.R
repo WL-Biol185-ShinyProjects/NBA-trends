@@ -10,12 +10,23 @@ shinyServer(function(input, output)
     player<-input$Player
   } 
   
-  fullStats %>%
-    filter(player %in% fullStats$PLAYER),
+  if(input$Team==""){
+    team<-unique(data.frame(fullStats$TEAM))
+  } else{
+    team<-input$Team
+  }
   
-  fullStats %>%
-
-   output$NBAplot <- renderPlot({ggplot(data=fullStats, aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth()})
+  
+  
+ 
+   output$NBAplot <- 
+     renderPlot({
+       fullStats %>%
+         filter(player %in% fullStats$PLAYER)
+         filter(SEASON=input$Season)
+         filter(team %in% fullStats$TEAM)
+  
+       ggplot(data=fullStats, aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth()})
 
 ) 
   
