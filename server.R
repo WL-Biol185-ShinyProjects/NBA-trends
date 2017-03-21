@@ -18,14 +18,6 @@ function(input, output){
        } else {
          team <- input$Team
        }
-<<<<<<< HEAD
-       
-       fullStats %>%
-         filter(fullStats$PLAYER %in% player) %>%
-         filter(fullStats$SEASON %in% input$Season) %>%
-         filter(fullStats$TEAM %in% team) %>%
-=======
->>>>>>> 839c4641ceef310751331e1b333c28fa9f7ee109
 
        fullStats %>%
          filter(
