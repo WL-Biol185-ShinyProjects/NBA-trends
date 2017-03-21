@@ -18,9 +18,17 @@ function(input, output){
        } else {
          team <- input$Team
        }
+<<<<<<< HEAD
            
+=======
+
+>>>>>>> 81068a9a4c2d5db2514ae8f7ed09eaa785729a2e
        fullStats %>%
-         filter(fullStats$PLAYER %in% player, fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2], fullStats$TEAM %in% team) %>%
+         filter(
+                  fullStats$PLAYER %in% player, 
+                  fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2], 
+                  fullStats$TEAM %in% team 
+                )%>%
          ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()
 
          })
