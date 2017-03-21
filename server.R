@@ -14,7 +14,7 @@ function(input, output){
        }
        
        if(input$Team == ""){
-         team <- unqique(data.frame(fullStats$TEAM))
+         team <- unique(data.frame(fullStats$TEAM))
        } else {
          team <- input$Team
        }
