@@ -26,34 +26,14 @@ function(input, output){
                   fullStats$PLAYER %in% player, 
                   fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2], 
                   fullStats$TEAM %in% team 
-                )%>%
+                ) %>%
          ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()
 
-    renderPlot({
+   
       
-      if(is.null(input$Player)){
-        player <- unique(data.frame(fullStats$PLAYER))
-      } else {
-        player <- input$Player
-      }
-      
-      if(is.null(input$Team)){
-        team <- unique(data.frame(fullStats$TEAM))
-      } else {
-        team <- input$Team
-      }
-      
-      fullStats %>%
-        filter(
-          fullStats$PLAYER %in% player, 
-          fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2], 
-          fullStats$TEAM %in% team 
-        )%>%
-        ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()
-      
-    })
-     }
+     })
 }
+
 
 
   
