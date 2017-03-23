@@ -1,9 +1,12 @@
 library(shiny)
 library(ggplot2)
 library(magrittr)
+library(tidyverse)
+library(dplyr)
 
 function(input, output){
   
+  fullStats <- read.table("fullStats.txt")
   
   output$NBAplot <-
     renderPlot({
@@ -21,10 +24,10 @@ function(input, output){
       }
       
       fullStats %>%
-        filter(
-        fullStats$PLAYER %in% player
-        fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2],
-        fullStats$TEAM %in% team
+        filter( 
+        PLAYER %in% player
+        # fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2],
+        # fullStats$TEAM %in% team
         )%>%
         ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()
       
