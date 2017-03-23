@@ -6,7 +6,6 @@ function(input, output){
   
   
   output$NBAplot <-
-
      renderPlot({
 
        if(is.null(input$Player)){
@@ -29,8 +28,6 @@ function(input, output){
          #        ) %>%
          ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()
 
-   
-      
      })
 }
 

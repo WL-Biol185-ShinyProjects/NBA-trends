@@ -16,13 +16,13 @@ fluidPage(
                   max = 2016, value = c(2010,2016)),
       
       
-      selectInput("Team", label = h3("Select Team"),
+      selectizeInput("Team", label = h3("Select Team"),
                   choices = list("Atlanta Hawks" = "ATL", "Brooklyn Nets" = "BKN", "Boston Celtics" = "BOS", "Charlotte Hornets" = "CHA", "Chicago Bulls" = "CHI", "Cleveland Cavaliers" = "CLE", "Dallas Mavericks" = "DAL", "Denver Nuggets" = "DEN", "Detroit Pistons" = "DET", "Golden State Warriors" = "GSW", "Houston Rockets" = "HOU", "Indiana Pacers" = "IND", "LA Clippers" = "LAC", "Los Angeles Lakers" = "LAL", "Memphis Grizzlies" = "MEM", "Miami Heat" = "MIA" ,"Milwaukee Bucks" = "MIL","Minnestota Timberwolves" = "MIN", "New Orleans Pelicans" = "NOP","New York Knicks" = "NYK","Oklahoma City Thunder" = "OKC","Orlando Magic" = "ORL", "Philadelphia 76ers" = "PHI", "Phoenix Suns" = "PHX", "Portland Trail Blazers" = "POR", "Sacramento Kings" = "SAC", "San Antonio Spurs" = "SAS", "Toronto Raptors" = "TOR", "Utah Jazz" = "UTA", "Washington Wizards" = "WAS"),
-                  selected = 1, multiple = TRUE),                              
+                  selected = NULL, multiple = TRUE),                              
       
       checkboxGroupInput("Position", label = h3("Select Position"),
                          choices = list("Center" = "C", "Guard" = "G","Small Forward" = "F"),
-                         selected = 1)
+                         selected = "Center")
       
       
     ),
