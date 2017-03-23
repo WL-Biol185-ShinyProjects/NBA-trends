@@ -13,13 +13,13 @@ function(input, output){
     renderPlot({
       
       if(is.null(input$Player)){
-        player <- unique(data.frame(fullStats$PLAYER))
+        player <- fullStats$PLAYER
       } else {
         player <- input$Player
       }
       
       if(is.null(input$Team)){
-        team <- unique(data.frame(fullStats$TEAM))
+        team <- fullStats$TEAM
       } else {
         team <- input$Team
       }
@@ -27,12 +27,13 @@ function(input, output){
       fullStats %>%
 
         filter( 
-        PLAYER %in% player
+        PLAYER %in% player,
         # fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2],
-        # fullStats$TEAM %in% team
+        TEAM %in% team
         )%>%
-        ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()
-      
+    
+        ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth()
+         
     })
 }
 
