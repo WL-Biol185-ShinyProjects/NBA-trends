@@ -3,11 +3,10 @@ library(shiny)
 # Define UI for application that draws a histogram
 fluidPage(
   
-  # Application title
-  titlePanel("Filter by"),
-  
-  sidebarLayout(
-    sidebarPanel(
+navbarPage("NBA Stats", 
+  tabPanel("Plot",
+    sidebarLayout(
+     sidebarPanel(
       
       selectizeInput("Player", label = h3("Select Player"), selected=NULL, multiple=TRUE, choices=fullStats$PLAYER),
       
@@ -37,5 +36,11 @@ fluidPage(
       
     )
   )
+),
+  tabPanel("Machine Learning",
+           plotOutput("Heatmap")),
+  tabPanel("ballr"
+)
+)
 )
 

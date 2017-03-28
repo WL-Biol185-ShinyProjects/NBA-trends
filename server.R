@@ -3,10 +3,16 @@ library(ggplot2)
 library(magrittr)
 library(tidyverse)
 library(dplyr)
+library(caret)
 
 function(input, output){
   
   fullStats <- read.table("fullStats.txt")
+  
+  output$Heatmap <-
+      renderPlot({
+        heatmap(as.matrix(fullStats[1:1000, 4:29]))
+      })
   
   output$NBAplot <-
     renderPlot({
@@ -26,9 +32,11 @@ function(input, output){
       fullStats %>%
         filter( 
         PLAYER %in% player,
-        # fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2],
+        fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2],
         TEAM %in% team
+        # we need to add a line here to sortby() team instead of still individual players 
         )%>%
+        
     
         ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth()
          
