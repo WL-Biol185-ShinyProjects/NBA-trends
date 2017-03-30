@@ -1,4 +1,5 @@
 library(shiny)
+fullStats <- read.table("fullStats.txt")
 
 # Define UI for application that draws a histogram
 fluidPage(
@@ -38,12 +39,12 @@ navbarPage("NBA Stats",
   )
 ),
   tabPanel("Machine Learning",
-           plotOutput("Heatmap")),
-  tabPanel("ballr"
+           plotOutput("Heatmap"))
+
            
 )
 )
-)
+
 
 
   
