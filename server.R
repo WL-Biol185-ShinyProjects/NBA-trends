@@ -20,8 +20,10 @@ function(input, output){
       
       if(is.null(input$Player)){
         player <- fullStats$PLAYER
+       
       } else {
         player <- input$Player
+      
       }
       
       if(is.null(input$Team)){
@@ -29,6 +31,11 @@ function(input, output){
       } else {
         team <- input$TeamS
       }
+      
+      output$click_info <- renderPrint({
+        nearPoints(fullStats, input$plot_click, xvar=input$XInput, yvar=input$YInput)
+      })
+
       
       fullStats %>%
 
@@ -42,6 +49,7 @@ function(input, output){
         ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth() # + geom_label()
         #need to add text popup when examining points on ggpplot 
          
+  
     })
   
 }
