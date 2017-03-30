@@ -38,9 +38,11 @@ function(input, output){
         )%>%
         
     
-        ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth()
+        ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth() 
+        #need to add text popup when examining points on ggpplot 
          
     })
+  
 }
 
 

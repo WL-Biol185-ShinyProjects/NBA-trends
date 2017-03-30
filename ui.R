@@ -40,6 +40,7 @@ navbarPage("NBA Stats",
   tabPanel("Machine Learning",
            plotOutput("Heatmap")),
   tabPanel("ballr"
+           
 )
 )
 )
