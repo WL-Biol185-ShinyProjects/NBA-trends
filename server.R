@@ -27,7 +27,7 @@ function(input, output){
       if(is.null(input$Team)){
         team <- fullStats$TEAM
       } else {
-        team <- input$Team
+        team <- input$TeamS
       }
       
       fullStats %>%
@@ -36,11 +36,10 @@ function(input, output){
         PLAYER %in% player,
         fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2],
         TEAM %in% team
-        # we need to add a line here to sortby() team instead of still individual players 
         )%>%
         
     
-        ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy, label = rownames(PLAYER)))+geom_point()+geom_smooth() + geom_label()
+        ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth() # + geom_label()
         #need to add text popup when examining points on ggpplot 
          
     })
