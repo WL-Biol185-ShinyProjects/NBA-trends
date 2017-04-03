@@ -42,9 +42,15 @@ function(input, output){
                                    TEAM %in% team))
       print(player1) 
       
+      
+      #need to fogure out how to format textbox 
       output$click_info <- renderPrint({
         nearPoints(player1, input$plot_click, maxpoints=1)
       })
+      
+      # output$text1 <- renderText({ 
+      #   paste("You have selected", input$var)
+      # })
 
       
       fullStats %>%
