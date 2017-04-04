@@ -4,6 +4,7 @@ fullStats <- read.table("fullStats.txt")
 fluidPage(
   
 navbarPage("NBA Stats", 
+  tabPanel("Background"),
   tabPanel("Plot",
     sidebarLayout(
      sidebarPanel(
@@ -29,15 +30,14 @@ navbarPage("NBA Stats",
     mainPanel(
    
       plotOutput("NBAplot", 
-                click = "plot_click"
-                # brush = "plot_brush"
+                click = "plot_click",
+                brush = "plot_brush"
                  ), 
       
       helpText("This table will display the statistics of the player you click on the graph:"),
       column(width = 12,
              tableOutput("click_info"),
              tableOutput("brush_info")
-             
       ),
     
       helpText("Select which variables to compare and how to color points with the inputs below:"),
@@ -111,7 +111,9 @@ navbarPage("NBA Stats",
            
            column(width = 12,
                   verbatimTextOutput("heatmap_click_info"))
-           )
+           ),
+
+  tabPanel("References")
 
 )
 )

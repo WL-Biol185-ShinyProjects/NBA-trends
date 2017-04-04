@@ -46,9 +46,9 @@ function(input, output){
         nearPoints(player1, input$plot_click, maxpoints=1)
       })
       
-      # output$brush_info <- renderTable({
-      #   verbatimTextOutput(player1, input$plot_brush)
-      # })
+      output$brush_info <- renderTable({
+        verbatimTextOutput(player1, input$plot_brush)
+      })
   
       fullStats %>%
 
