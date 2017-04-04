@@ -14,7 +14,6 @@ function(input, output){
         
         output$heatmap_click_info <- renderPrint({
         nearPoints(fullStats, input$plot_click, maxpoints=1)
-        
         })
         
         heatmap(as.matrix(fullStats[1:1000, 4:29]))
@@ -35,18 +34,21 @@ function(input, output){
       } else {
         team <- input$Team
       }
-      print(team)
+    
       player1 <- as.data.frame(fullStats %>%
                                  filter( 
                                    PLAYER %in% player, 
                                    TEAM %in% team))
-      print(player1) 
       
       
-      #need to figure out how to format textbox 
+     
       output$click_info <- renderTable({
         nearPoints(player1, input$plot_click, maxpoints=1)
       })
+      
+      # output$brush_info <- renderTable({
+      #   verbatimTextOutput(player1, input$plot_brush)
+      # })
   
       fullStats %>%
 
@@ -57,8 +59,7 @@ function(input, output){
         )%>%
         
     
-        ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth() # + geom_label()
-        #need to add text popup when examining points on ggpplot 
+        ggplot(aes_string(input$XInput, input$YInput, colour=input$ColorBy))+geom_point()+geom_smooth()
          
   
     })

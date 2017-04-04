@@ -30,20 +30,78 @@ navbarPage("NBA Stats",
    
       plotOutput("NBAplot", 
                 click = "plot_click"
+                # brush = "plot_brush"
                  ), 
       
-      helpText("This box will display the statistics of the player you click on the graph:"),
+      helpText("This table will display the statistics of the player you click on the graph:"),
       column(width = 12,
-             tableOutput("click_info")
+             tableOutput("click_info"),
+             tableOutput("brush_info")
+             
       ),
     
       helpText("Select which variables to compare and how to color points with the inputs below:"),
       
- 
-      selectInput("XInput", label="X Input", choices = list("Season"="SEASON", "Age"="AGE", "Games Played" = "GP", "Wins"="W", "Losses" ="L", "Average Minutes Per Game"="MIN", "Double Doubles"="DD2", "Triple Doubles"="TD3", "Personal Fouls"="PF", "Blocks"="BLK", "Steals"="STL", "Turnovers"="TOV", "Assists"="AST", "Rebounds"="REB", "Defensive Rebounds"="DREB", "Offensive Rebounds"="OREB","Free Throw Percentage"="FT%", "Free Throw Attempts"="FTA", "Free Throws Made"="FTM", "Three Point Attempts"="3PA", "Three Point Made"="3PM", "Field Goal Attempt"="FGA", "Field Goal Misses"="FGM", "Average Points Per Game"="PTS", "Plus/Minus Score"="PLUSMINUS", "Field Goal Percentage"="FG%", "Three Point Percentage"="3P%")), 
-      selectInput("YInput", label="Y Input", choices = list("Age"="AGE", "Games Played" = "GP", "Wins"="W", "Losses" ="L", "Average Minutes Per Game"="MIN", "Double Doubles"="DD2", "Triple Doubles"="TD3", "Personal Fouls"="PF", "Blocks"="BLK", "Steals"="STL", "Turnovers"="TOV", "Assists"="AST", "Rebounds"="REB", "Defensive Rebounds"="DREB", "Offensive Rebounds"="OREB","Free Throw Percentage"="FT%", "Free Throw Attempts"="FTA", "Free Throws Made"="FTM", "Three Point Attempts"="3PA", "Three Point Made"="3PM", "Field Goal Attempt"="FGA", "Field Goal Misses"="FGM", "Average Points Per Game"="PTS", "Plus/Minus Score"="PLUSMINUS", "Field Goal Percentage"="FG%", "Three Point Percentage"="3P%")),
-      selectInput("ColorBy", label="Color By:", choices = list("Team" = "TEAM","Position" = "POSITION", "Player" = "PLAYER"))
+    fluidRow(
+      column(width = 4, selectInput("XInput", label="X Input", choices = list("Season"="SEASON", 
+                                                                              "Age" = "AGE", 
+                                                                              "Games Played" = "GP", 
+                                                                              "Wins" = "W", "Losses" = "L", 
+                                                                              "Average Minutes Per Game" = "MIN", 
+                                                                              "Average Points Per Game" = "PTS",
+                                                                              "Field Goal Makes Per Game" = "FGM", 
+                                                                              "Field Goal Attempts Per Game" = "FGA",
+                                                                              "Field Goal Percentage" = "FG.", 
+                                                                              "Average Three Point Makes Per Game" = "X3PM",
+                                                                              "Average Three Point Attempts Per Game" = "X3PA", 
+                                                                              "Three Point Percentage" = "X3P.",
+                                                                              "Average Free Throw Makes Per Game" = "FTM", 
+                                                                              "Average Free Throw Attemps Per Game" = "FTA", 
+                                                                              "Free Throw Percentage" = "FT.", 
+                                                                              "Average Offensive Rebounds Per Game" = "OREB", 
+                                                                              "Average Defensive Rebounds Per Game" = "DREB", 
+                                                                              "Average Rebounds Per Game" = "REB", 
+                                                                              "Average Assists Per Game" = "AST", 
+                                                                              "Average Turnovers Per Game" = "TOV", 
+                                                                              "Average Steals Per Game" = "STL", 
+                                                                              "Average Blocks Per Game" = "BLK", 
+                                                                              "Average Personal Fouls Per Game" = "PF",
+                                                                              "Number of Double Doubles" = "DD2", 
+                                                                              "Number of Triple Doubles" = "TD3", 
+                                                                              "Plus/Minus Score" = "PLUSMINUS"))), 
       
+      column(width = 4, selectInput("YInput", label="Y Input", choices = list("Season"="SEASON", 
+                                                                              "Age" = "AGE", 
+                                                                              "Games Played" = "GP", 
+                                                                              "Wins" = "W", "Losses" = "L", 
+                                                                              "Average Minutes Per Game" = "MIN", 
+                                                                              "Average Points Per Game" = "PTS",
+                                                                              "Field Goal Makes Per Game" = "FGM", 
+                                                                              "Field Goal Attempts Per Game" = "FGA",
+                                                                              "Field Goal Percentage" = "FG.", 
+                                                                              "Average Three Point Makes Per Game" = "X3PM",
+                                                                              "Average Three Point Attempts Per Game" = "X3PA", 
+                                                                              "Three Point Percentage" = "X3P.",
+                                                                              "Average Free Throw Makes Per Game" = "FTM", 
+                                                                              "Average Free Throw Attemps Per Game" = "FTA", 
+                                                                              "Free Throw Percentage" = "FT.", 
+                                                                              "Average Offensive Rebounds Per Game" = "OREB", 
+                                                                              "Average Defensive Rebounds Per Game" = "DREB", 
+                                                                              "Average Rebounds Per Game" = "REB", 
+                                                                              "Average Assists Per Game" = "AST", 
+                                                                              "Average Turnovers Per Game" = "TOV", 
+                                                                              "Average Steals Per Game" = "STL", 
+                                                                              "Average Blocks Per Game" = "BLK", 
+                                                                              "Average Personal Fouls Per Game" = "PF",
+                                                                              "Number of Double Doubles" = "DD2", 
+                                                                              "Number of Triple Doubles" = "TD3", 
+                                                                              "Plus/Minus Score" = "PLUSMINUS"))), 
+      
+      column(width = 4, selectInput("ColorBy", label="Color By:", choices = list("Team" = "TEAM",
+                                                                                 "Position" = "POSITION", 
+                                                                                 "Player" = "PLAYER")))
+    
+      ) 
     )
   )
 ),

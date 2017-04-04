@@ -4,3 +4,6 @@ head(kgroups)
 groups<-
 
 heatmap(as.matrix(fullStats[1:1000, 4:29]))
+
+fullStats <- read.table("fullStats.txt")
+fullStats
