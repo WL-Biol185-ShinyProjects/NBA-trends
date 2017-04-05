@@ -3,8 +3,34 @@ fullStats <- read.table("fullStats.txt")
 # Define UI for application that draws a histogram
 fluidPage(
   
-navbarPage("NBA Stats", 
-  tabPanel("Background"),
+navbarPage("NBA Stats", theme = shinythemes::shinytheme("flatly"), header = "Created by Matthew Bryson, Kyle Singerman, John Williamson", 
+  tabPanel("Background",
+           fluidRow( h1(span("Interactive NBA Stats Trends"
+           ),
+           align = "center"
+           ),
+           
+           br(),
+           br(),
+           
+           p( "Welcome! This application allows
+                                   visualization of various NBA 
+                                   statistics for the past eleven seasons, sorted by player,
+                                   team, and position.",
+           
+                p( "Please click the Plot tab above to view the interactive plot.",align = "center")
+              ),
+           
+           br(),
+           br(),
+           
+           img( src = "http://files.shandymedia.com/styles/page/s3/images/photos/thefumble/lebron-james-blocks-stephen-curry-1.png"
+                  , style = "display: block; margin-left: auto; margin-right: auto;"
+           )
+           )
+  
+           
+              ),
   tabPanel("Plot",
     sidebarLayout(
      sidebarPanel(
@@ -34,7 +60,7 @@ navbarPage("NBA Stats",
                 brush = "plot_brush"
                  ), 
       
-      helpText("This table will display the statistics of the player you click on the graph:"),
+      helpText("These tables will display the statistics of the player you click, or the players you select, on the graph:"),
       column(width = 12,
              tableOutput("click_info"),
              tableOutput("brush_info")
@@ -106,11 +132,8 @@ navbarPage("NBA Stats",
   )
 ),
   tabPanel("Machine Learning",
-           plotOutput("Heatmap", 
-                      click = "heatmap_plot_click"), 
-           
-           column(width = 12,
-                  verbatimTextOutput("heatmap_click_info"))
+           # checkboxInput("cluster", "Apply clustering"),
+           d3heatmapOutput("D3heatmap")
            ),
 
   tabPanel("References")

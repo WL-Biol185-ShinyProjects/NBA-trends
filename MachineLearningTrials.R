@@ -15,3 +15,8 @@ d
 d3heatmap(d, scale = "column")
           # , dendrogram = "row", k_row = 3,
           # color = scales::col_quantile("Blues", NULL, 5))
+
+
+library(d3heatmap)
+d3heatmap(mtcars, scale = "column", colors = "Blues")
+View(mtcars)

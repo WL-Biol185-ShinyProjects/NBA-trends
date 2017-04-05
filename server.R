@@ -4,19 +4,18 @@ library(magrittr)
 library(tidyverse)
 library(dplyr)
 library(caret)
+library(d3heatmap)
 
 function(input, output){
   
   fullStats <- read.table("fullStats.txt")
   
-  output$Heatmap <-
-      renderPlot({
-        
-        output$heatmap_click_info <- renderPrint({
-        nearPoints(fullStats, input$plot_click, maxpoints=1)
-        })
-        
-        heatmap(as.matrix(fullStats[1:1000, 4:29]))
+  output$D3Heatmap <-
+      renderD3heatmap({
+        d3heatmap(
+          fullStats
+          # dendrogram = if (input$cluster) "both" else "none"
+        )
       })
   
   output$NBAplot <-
@@ -47,8 +46,11 @@ function(input, output){
       })
       
       output$brush_info <- renderTable({
-        verbatimTextOutput(player1, input$plot_brush)
+        brushedPoints(player1, input$plot_brush)
       })
+      
+      
+
   
       fullStats %>%
 
