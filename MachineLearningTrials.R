@@ -18,5 +18,13 @@ d3heatmap(d, scale = "column")
 
 
 library(d3heatmap)
+
 d3heatmap(mtcars, scale = "column", colors = "Blues")
 View(mtcars)
+d<-read.csv("data/heatmapStats.csv", row.names = 1)
+d
+
+url <- "http://datasets.flowingdata.com/ppg2008.csv"
+nba_players <- read.csv(url, row.names = 1)
+nba_players
+d3heatmap(nba_players, scale = "column", colors = "Blues")
