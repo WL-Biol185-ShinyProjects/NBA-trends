@@ -1,13 +1,17 @@
 
-m<-as.matrix(heatmapStats)
+m<-as.matrix(FinalHeatmapStats)
 m
-row.names(m)<-heatmapStats$X1
+row.names(m)<-FinalHeatmapStats$PLAYER
 m
 n<-as.data.frame(m)
 n
-n$X1 <- NULL
-b<-data.matrix(n)
-b
+n$PLAYER <- NULL
+q<-data.matrix(n)
+q
+
+q.txt<-write.table(q)
+q.txt
+
 d3heatmap(b[1:1000, 1:20])
 
 url <- "http://datasets.flowingdata.com/ppg2008.csv"

@@ -9,24 +9,26 @@ library(d3heatmap)
 function(input, output){
   
   fullStats <- read.table("fullStats.txt")
+  Heatmap <- read.table("q")
+  
+  m<-as.matrix(FinalHeatmapStats)
+  m
+  row.names(m)<-FinalHeatmapStats$PLAYER
+  m
+  n<-as.data.frame(m)
+  n
+  n$PLAYER <- NULL
+  b<-data.matrix(n)
+  b 
   # heatmapStats <- read.table("heatmapStats.txt")
   
   output$D3Heatmap <-
       renderD3heatmap({
-        filter(heatmapStats %>%
+        filter(b %>%
                  SEASON == input$HeatmapSeason)
-        
-        m<-as.matrix(heatmapStats)
-        m
-        row.names(m)<-heatmapStats$PLAYER
-        m
-        n<-as.data.frame(m)
-        n
-        n$PLAYER <- NULL
-        b<-data.matrix(n)
-        b
+      
         d3heatmap(
-          heatmapStats
+          b
         )
       })
   

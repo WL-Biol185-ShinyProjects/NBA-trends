@@ -1,7 +1,7 @@
 library(shiny)
 library(d3heatmap)
 fullStats <- read.table("fullStats.txt")
-# heatmapStats <- read.table("heatmapStats.txt")
+Heatmap <- read.table("q")
 
 fluidPage(
   
@@ -149,7 +149,7 @@ navbarPage("NBA Stats", theme = shinythemes::shinytheme("flatly"), header = "Cre
            sidebarLayout(
              sidebarPanel(
            helpText("View a heatmap of player performance, sorted by the season you select here:"),
-           selectInput("HeatmapSeason", "Season to display on heatmap", choices = unique(fullStats$SEASON))
+           selectInput("HeatmapSeason", "Season to display on heatmap", choices = unique(FinalHeatmapStats$SEASON))
              )
            ,
            
