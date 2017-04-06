@@ -13,7 +13,7 @@ function(input, output){
   output$D3Heatmap <-
       renderD3heatmap({
         d3heatmap(
-          fullStats
+          heatmapStats
           # dendrogram = if (input$cluster) "both" else "none"
         )
       })
