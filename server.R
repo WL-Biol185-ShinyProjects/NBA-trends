@@ -9,12 +9,24 @@ library(d3heatmap)
 function(input, output){
   
   fullStats <- read.table("fullStats.txt")
+  # heatmapStats <- read.table("heatmapStats.txt")
   
   output$D3Heatmap <-
       renderD3heatmap({
+        filter(heatmapStats %>%
+                 SEASON == input$HeatmapSeason)
+        
+        m<-as.matrix(heatmapStats)
+        m
+        row.names(m)<-heatmapStats$PLAYER
+        m
+        n<-as.data.frame(m)
+        n
+        n$PLAYER <- NULL
+        b<-data.matrix(n)
+        b
         d3heatmap(
           heatmapStats
-          # dendrogram = if (input$cluster) "both" else "none"
         )
       })
   
