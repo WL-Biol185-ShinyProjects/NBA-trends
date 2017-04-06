@@ -1,9 +1,10 @@
 library(shiny)
+library(d3heatmap)
 fullStats <- read.table("fullStats.txt")
 # Define UI for application that draws a histogram
 fluidPage(
   
-navbarPage("NBA Stats", theme = shinythemes::shinytheme("flatly"), header = "Created by Matthew Bryson, Kyle Singerman, John Williamson", 
+navbarPage("NBA Stats", theme = shinythemes::shinytheme("flatly"), header = "Created by Matthew Bryson, Kyle Singerman, Jonathan Williamson", 
   tabPanel("Background",
            fluidRow( h1(span("Interactive NBA Stats Trends"
            ),
@@ -16,7 +17,10 @@ navbarPage("NBA Stats", theme = shinythemes::shinytheme("flatly"), header = "Cre
            p( "Welcome! This application allows
                                    visualization of various NBA 
                                    statistics for the past eleven seasons, sorted by player,
-                                   team, and position.",
+                                   team, and position.
+Basketball is one of the most popular sports in the world. Today the NBA hosts 30 teams with a total of 473 players. Each team plays 82 games during the regular season alone (stats.naba.com). Statistical data for each team and player constantly changes as a season progresses. As a result, it becomes difficult to track an intrinsic wide range of statistical data for the NBA. Until now, there did not exist an aesthetically pleasing way to visualize the immense statistical data available for the NBA. Our coding team was formed to solve this problem, and we have created an app that can organize decades of NBA statistics.   
+For the first time in basketball history, our app provides the general public with multidimensional statistical analysis for the NBA. This App is user friendly and can provide visual analysis for 26 common basketball statistics that track individual players and teams since the 1996 season.  
+",
            
                 p( "Please click the Plot tab above to view the interactive plot.",align = "center")
               ),
