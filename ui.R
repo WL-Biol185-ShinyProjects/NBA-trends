@@ -52,7 +52,7 @@ For the first time in basketball history, our app provides the general public wi
                   selected = NULL, multiple = TRUE),                              
       
       checkboxGroupInput("Position", label = h3("Select Position"),
-                         choices = list("Center" = "C", "Guard" = "G","Small Forward" = "F"),
+                         choices = list("Center" = "C", "Guard" = "G","Forward" = "F", "Center/Forward" = "C-F", "Forward/Center" = "F-C", "Forward/Guard" = "F-G", "Guard/Forward" = "G-F"),
                          selected = "Center")
       
       
