@@ -1,7 +1,7 @@
 library(shiny)
 library(d3heatmap)
 fullStats <- read.table("fullStats.txt")
-Heatmap <- read.table("q")
+Heatmap <- read.table("heatmap.txt")
 
 fluidPage(
   

@@ -9,8 +9,9 @@ n$PLAYER <- NULL
 q<-data.matrix(n)
 q
 
-q.txt<-write.table(q)
-q.txt
+write.table(q, file = "heatmap.txt")
+
+
 
 d3heatmap(b[1:1000, 1:20])
 
