@@ -19,7 +19,7 @@ navbarPage("NBA Stats", theme = shinythemes::shinytheme("flatly"), header = "Cre
                                    statistics for the past eleven seasons, sorted by player,
                                    team, and position.
 Basketball is one of the most popular sports in the world. Today the NBA hosts 30 teams with a total of 473 players. Each team plays 82 games during the regular season alone (stats.naba.com). Statistical data for each team and player constantly changes as a season progresses. As a result, it becomes difficult to track an intrinsic wide range of statistical data for the NBA. Until now, there did not exist an aesthetically pleasing way to visualize the immense statistical data available for the NBA. Our coding team was formed to solve this problem, and we have created an app that can organize decades of NBA statistics.   
-For the first time in basketball history, our app provides the general public with multidimensional statistical analysis for the NBA. This App is user friendly and can provide visual analysis for 26 common basketball statistics that track individual players and teams since the 1996 season.  
+For the first time in basketball history, our app provides the general public with multidimensional statistical analysis for the NBA. This App is user friendly and can provide visual analysis for 26 common basketball statistics that track individual players and teams from the 1996 season through April 10th, 2017.  
 ",
            
                 p( "Please click the Plot tab above to view the interactive plot.",align = "center")
@@ -47,7 +47,7 @@ For the first time in basketball history, our app provides the general public wi
       
       
       selectizeInput("Team", label = h3("Select Team"),
-                  choices = list("Atlanta Hawks" = "ATL", "Brooklyn Nets" = "BKN", "Boston Celtics" = "BOS", "Charlotte Hornets" = "CHA", "Chicago Bulls" = "CHI", "Cleveland Cavaliers" = "CLE", "Dallas Mavericks" = "DAL", "Denver Nuggets" = "DEN", "Detroit Pistons" = "DET", "Golden State Warriors" = "GSW", "Houston Rockets" = "HOU", "Indiana Pacers" = "IND", "LA Clippers" = "LAC", "Los Angeles Lakers" = "LAL", "Memphis Grizzlies" = "MEM", "Miami Heat" = "MIA" ,"Milwaukee Bucks" = "MIL","Minnestota Timberwolves" = "MIN", "New Orleans Pelicans" = "NOP","New York Knicks" = "NYK","Oklahoma City Thunder" = "OKC","Orlando Magic" = "ORL", "Philadelphia 76ers" = "PHI", "Phoenix Suns" = "PHX", "Portland Trail Blazers" = "POR", "Sacramento Kings" = "SAC", "San Antonio Spurs" = "SAS", "Toronto Raptors" = "TOR", "Utah Jazz" = "UTA", "Washington Wizards" = "WAS"),
+                  choices = list("Atlanta Hawks" = "ATL", "Brooklyn Nets" = "BKN", "Boston Celtics" = "BOS", "Charlotte Bobcats (2004-14)/Hornets (2014-16)" = "CHA", "Charlotte Hornets (1996-2002)" = "CHH", "Chicago Bulls" = "CHI", "Cleveland Cavaliers" = "CLE", "Dallas Mavericks" = "DAL", "Denver Nuggets" = "DEN", "Detroit Pistons" = "DET", "Golden State Warriors" = "GSW", "Houston Rockets" = "HOU", "Indiana Pacers" = "IND", "LA Clippers" = "LAC", "Los Angeles Lakers" = "LAL", "Memphis Grizzlies" = "MEM", "Miami Heat" = "MIA" ,"Milwaukee Bucks" = "MIL","Minnestota Timberwolves" = "MIN", "New Jersey Nets" = "NJN", "New Orleans Hornets" = "NOH", "New Orleans Pelicans" = "NOP","New York Knicks" = "NYK","Oklahoma City Thunder" = "OKC","Orlando Magic" = "ORL", "Philadelphia 76ers" = "PHI", "Phoenix Suns" = "PHX", "Portland Trail Blazers" = "POR", "Sacramento Kings" = "SAC", "San Antonio Spurs" = "SAS", "Seattle SuperSonics" = "SEA", "Toronto Raptors" = "TOR", "Utah Jazz" = "UTA", "Vancouver Grizzlies" = "VAN", "Washington Wizards" = "WAS"),
                   selected = NULL, multiple = TRUE),                              
       
       checkboxGroupInput("Position", label = h3("Select Position"),
@@ -140,7 +140,8 @@ For the first time in basketball history, our app provides the general public wi
            d3heatmapOutput("D3heatmap")
            ),
 
-  tabPanel("References")
+  tabPanel("References"),
+  tabPanel("Download the dataset!")
 
 )
 )
