@@ -1,22 +1,21 @@
-kgroups<-kmeans(as.matrix(fullStats[1:1000, 4:29]), centers=20)
-kgroups
-head(kgroups)
-groups<-
 
-heatmap(as.matrix(fullStats[1:1000, 4:29]))
+m<-as.matrix(FinalHeatmapStats)
+m
+row.names(m)<-FinalHeatmapStats$PLAYER
+m
+n<-as.data.frame(m)
+n
+n$PLAYER <- NULL
+q<-data.matrix(n)
+q
 
-fullStats <- read.table("fullStats.txt")
-fullStats
-
-fullStats <- read.table("fullStats.txt")
-fullStats
-d<-fullStats[3:10]
-d
-d3heatmap(d, scale = "column")
-          # , dendrogram = "row", k_row = 3,
-          # color = scales::col_quantile("Blues", NULL, 5))
+write.table(q, file = "heatmap.txt")
 
 
-library(d3heatmap)
-d3heatmap(mtcars, scale = "column", colors = "Blues")
-View(mtcars)
+
+d3heatmap(b[1:1000, 1:20])
+
+url <- "http://datasets.flowingdata.com/ppg2008.csv"
+nba_players <- read.csv(url, row.names = 1)
+nba_players
+d3heatmap(nba_players, scale = "column", colors = "Blues")
