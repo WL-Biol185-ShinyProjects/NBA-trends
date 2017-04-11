@@ -8,8 +8,8 @@ library(d3heatmap)
 
 function(input, output){
   
-  fullStats <- read.table("fullStats.txt")
-  Heatmap <- read.table("heatmap.txt")
+  fullStats <- read.table("FinalStats.txt")
+
   
   output$D3Heatmap <-
       renderD3heatmap({
