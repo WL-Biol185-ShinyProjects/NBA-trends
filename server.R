@@ -8,18 +8,18 @@ library(d3heatmap)
 
 function(input, output){
   
-  fullStats <- read.table("FinalStats.txt")
+  fullStats <- read.table("fullStats.txt")
 
   
-  output$D3Heatmap <-
-      renderD3heatmap({
-        filter(Heatmap %>%
-                 SEASON == input$HeatmapSeason)
-      
-        d3heatmap(
-          b
-        )
-      })
+  # output$D3Heatmap <-
+  #     renderD3heatmap({
+  #       filter(Heatmap %>%
+  #                SEASON == input$HeatmapSeason)
+  #     
+  #       d3heatmap(
+  #         b
+  #       )
+  #     })
   
   output$NBAplot <-
 
@@ -36,11 +36,19 @@ function(input, output){
       } else {
         team <- input$Team
       }
+      
+      if(is.null(input$Position)){
+        position <- fullStats$POSITION
+      } else {
+        position <- input$Team
+      }
+      
     
       player1 <- as.data.frame(fullStats %>%
                                  filter( 
                                    PLAYER %in% player, 
-                                   TEAM %in% team))
+                                   TEAM %in% team, 
+                                   POSITION %in% position))
       
       
      
@@ -60,7 +68,8 @@ function(input, output){
         filter( 
         PLAYER %in% player,
         fullStats$SEASON >= input$Season[1], fullStats$SEASON <= input$Season[2],
-        TEAM %in% team
+        TEAM %in% team, 
+        POSITION %in% position
         )%>%
         
     

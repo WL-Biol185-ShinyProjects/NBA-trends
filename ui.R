@@ -1,6 +1,6 @@
 library(shiny)
 library(d3heatmap)
-fullStats <- read.table("FinalStats.txt")
+fullStats <- read.table("fullStats.txt")
 
 
 fluidPage(
@@ -136,19 +136,19 @@ For the first time in basketball history, our app provides the general public wi
     )
   )
 ),
-  tabPanel("Interactive Heatmap",
-           sidebarLayout(
-             sidebarPanel(
-           helpText("View a heatmap of player performance, sorted by the season you select here:"),
-           selectInput("HeatmapSeason", "Season to display on heatmap", choices = unique(FinalHeatmapStats$SEASON))
-             )
-           ,
-           
-           mainPanel(
-           d3heatmapOutput("D3heatmap")
-           )
-           )
-           ),
+  # tabPanel("Interactive Heatmap",
+  #          sidebarLayout(
+  #            sidebarPanel(
+  #          helpText("View a heatmap of player performance, sorted by the season you select here:"),
+  #          selectInput("HeatmapSeason", "Season to display on heatmap", choices = unique(FinalHeatmapStats$SEASON))
+  #            )
+  #          ,
+  #          
+  #          mainPanel(
+  #          d3heatmapOutput("D3heatmap")
+  #          )
+  #          )
+  #          ),
 
 
   tabPanel("References",
