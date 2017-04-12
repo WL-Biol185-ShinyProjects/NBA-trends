@@ -1,7 +1,7 @@
 library(shiny)
 library(d3heatmap)
-fullStats <- read.table("fullStats.txt")
-
+fullStats <- read.table("FinalStats.txt")
+# Heatmap <- read.table("Heatmapstats.txt")
 
 fluidPage(
   
@@ -53,7 +53,7 @@ For the first time in basketball history, our app provides the general public wi
       
       checkboxGroupInput("Position", label = h3("Select Position"),
                          choices = list("Center" = "C", "Guard" = "G","Forward" = "F", "Center/Forward" = "C-F", "Forward/Center" = "F-C", "Forward/Guard" = "F-G", "Guard/Forward" = "G-F"),
-                         selected = "Center")
+                         selected = NULL)
       
       
     ),

@@ -8,7 +8,8 @@ library(d3heatmap)
 
 function(input, output){
   
-  fullStats <- read.table("fullStats.txt")
+  fullStats <- read.table("FinalStats.txt")
+  # Heatmap <- read.table("Heatmapstats.txt")
 
   
   # output$D3Heatmap <-
@@ -40,7 +41,7 @@ function(input, output){
       if(is.null(input$Position)){
         position <- fullStats$POSITION
       } else {
-        position <- input$Team
+        position <- input$Position
       }
       
     

@@ -1,3 +1,10 @@
+write.table(fullstatsfinalfinal, file="FinalStats.txt")
+read.table("FinalStats.txt") #can't open connection for some reason 
+
+
+write.table(q, file="Heatmapstats.txt")
+read.table("Heatmapstats.txt") # can't read in duplicate row names 
+
 
 m<-as.matrix(FinalHeatmapStats)
 m
@@ -9,7 +16,7 @@ n$PLAYER <- NULL
 q<-data.matrix(n)
 q
 
-write.table(q, file = "heatmap.txt")
+write.csv(q, file = "heatmap.txt")
 
 
 
