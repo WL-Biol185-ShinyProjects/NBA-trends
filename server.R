@@ -14,7 +14,7 @@ function(input, output, session){
   
   output$downloadData <- downloadHandler( filename = "NBAStats.csv"
                                           , content = function(file) {
-                                            write.csv(fullstatsfinalfinala, file)
+                                            write.csv(fullStats, file)
                                           }
   )
  
@@ -37,7 +37,7 @@ function(input, output, session){
           row.names(m) <- names 
 
         d3heatmap(
-         m, scale = "column", yaxis_font_size = "8pt"
+         m, scale = "column", yaxis_font_size = "8pt", colors = "Blues"
         )
       })
   
