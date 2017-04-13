@@ -10,6 +10,7 @@ function(input, output, session){
   
   fullStats <- read.table("FinalStats.txt")
   FinalHeatmapStatsSixteen <- read.table("Heatmapsixteen")
+  testHeatmap <- read.table("Heatmapsixteen.txt")
   
   output$downloadData <- downloadHandler( filename = "NBAStats.csv"
                                           , content = function(file) {
@@ -19,10 +20,26 @@ function(input, output, session){
  
   output$Heatmap <- 
       renderD3heatmap({
+        
+        if(is.null(input$Position)){
+          heatmapPlayer <- testHeatmap$PLAYER
+        } else {
+          heatmapPlayer <- input$HeatmapPlayer
+        }
         # filter dataframe into filter into matrix into heatmap
-
+         testHeatmapa <-
+          filter (testHeatmap, PLAYER %in% heatmapPlayer) 
+          
+          names <- testHeatmapa$PLAYER
+          testHeatmapa$PLAYER <- NULL 
+         
+          m <- as.matrix(testHeatmapa) 
+          row.names(m) <- names 
+          # m$PLAYER <- NULL 
+            print(m)
+          
         d3heatmap(
-        as.matrix(FinalHeatmapStatsSixteen), scale = "column"
+         m, scale = "column"
         )
       })
   

@@ -8,6 +8,9 @@ read.table("Heatmapstats.txt") # can't read in duplicate row names
 write.table(FinalHeatmapStats, file="Heatmap.txt")
 
 heatmap16 <-filter(FinalHeatmapStats, SEASON == 2016)
+heatmap16
+
+
 m<-as.matrix(heatmap16)
 m
 row.names(m)<-heatmap16$PLAYER
@@ -16,8 +19,9 @@ n<-as.data.frame(m)
 n
 n$PLAYER <- NULL
 n
-write.table(n, file="Heatmapsixteen")
-a<-read.table("Heatmapsixteen")
+
+write.table(heatmap16, file="Heatmapsixteen.txt")
+a<-read.table("Heatmapsixteen.txt")
 a
 
 heatmap<-read.table("Heatmap.txt")

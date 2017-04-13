@@ -2,6 +2,7 @@ library(shiny)
 library(d3heatmap)
 fullStats <- read.table("FinalStats.txt")
 FinalHeatmapStatsSixteen <- read.table("Heatmapsixteen")
+testHeatmap <- read.table("Heatmapsixteen.txt")
 
 fluidPage(
   
@@ -139,8 +140,8 @@ For the first time in basketball history, our app provides the general public wi
   tabPanel("Interactive Heatmap",
            sidebarLayout(
              sidebarPanel(
-           helpText("View a heatmap of player performance in the 2016 season")
-           # selectInput("HeatmapSeason", "Season to display on heatmap", choices = unique(FinalHeatmapStats$SEASON))
+           helpText("View a heatmap of player performance in the 2016 season. Select two or more players to compare their stats."),
+           selectizeInput("HeatmapPlayer", "Season Players display on heatmap", choices = unique(testHeatmap$PLAYER), multiple = TRUE)
              )
            ,
 
@@ -161,10 +162,12 @@ For the first time in basketball history, our app provides the general public wi
            br(),
            br(),
             
+           div(
            helpText( a("Click here to view dataset on official NBA site", href = "http://stats.nba.com/leaders/", target = "_blank")), 
           
-           downloadButton( "downloadData", label = "Download NBA Dataset"
-           ) 
+           downloadButton( "downloadData", label = "Download NBA Dataset"), 
+           class = "col-sm-4 text-center col-sm-offset-4" 
+           )
            )
           )
            
