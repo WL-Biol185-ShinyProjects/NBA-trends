@@ -21,7 +21,7 @@ function(input, output, session){
   output$Heatmap <- 
       renderD3heatmap({
         
-        if(is.null(input$Position)){
+        if(is.null(input$HeatmapPlayer)){
           heatmapPlayer <- testHeatmap$PLAYER
         } else {
           heatmapPlayer <- input$HeatmapPlayer
@@ -35,11 +35,9 @@ function(input, output, session){
          
           m <- as.matrix(testHeatmapa) 
           row.names(m) <- names 
-          # m$PLAYER <- NULL 
-            print(m)
-          
+
         d3heatmap(
-         m, scale = "column"
+         m, scale = "column", yaxis_font_size = "8pt"
         )
       })
   
