@@ -145,7 +145,6 @@ For the first time in basketball history, our app provides the general public wi
            ,
 
            mainPanel(
-           helpText("test"),
            d3heatmapOutput("Heatmap")
            )
            )
