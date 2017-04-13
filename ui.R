@@ -1,11 +1,11 @@
 library(shiny)
 library(d3heatmap)
 fullStats <- read.table("FinalStats.txt")
-# Heatmap <- read.table("Heatmapstats.txt")
+FinalHeatmapStatsSixteen <- read.table("Heatmapsixteen")
 
 fluidPage(
   
-navbarPage("NBA Stats", theme = shinythemes::shinytheme("flatly"), header = "Created by Matthew Bryson, Kyle Singerman, Jonathan Williamson", 
+navbarPage("NBA Stats", theme = shinythemes::shinytheme("flatly"), header = "Created by Matt Bryson, Kyle Singerman, Jonathan Williamson", 
   tabPanel("Background",
            fluidRow( h1(span("Interactive NBA Stats Trends"
            ),
@@ -136,19 +136,20 @@ For the first time in basketball history, our app provides the general public wi
     )
   )
 ),
-  # tabPanel("Interactive Heatmap",
-  #          sidebarLayout(
-  #            sidebarPanel(
-  #          helpText("View a heatmap of player performance, sorted by the season you select here:"),
-  #          selectInput("HeatmapSeason", "Season to display on heatmap", choices = unique(FinalHeatmapStats$SEASON))
-  #            )
-  #          ,
-  #          
-  #          mainPanel(
-  #          d3heatmapOutput("D3heatmap")
-  #          )
-  #          )
-  #          ),
+  tabPanel("Interactive Heatmap",
+           sidebarLayout(
+             sidebarPanel(
+           helpText("View a heatmap of player performance in the 2016 season")
+           # selectInput("HeatmapSeason", "Season to display on heatmap", choices = unique(FinalHeatmapStats$SEASON))
+             )
+           ,
+
+           mainPanel(
+           helpText("test"),
+           d3heatmapOutput("Heatmap")
+           )
+           )
+           ),
 
 
   tabPanel("References",
@@ -161,9 +162,10 @@ For the first time in basketball history, our app provides the general public wi
            br(),
            br(),
             
-           helpText( a("Click here to view dataset on official NBA site", href = "http://stats.nba.com/leaders/", target = "_blank"), align = "center"), 
-           helpText( a("Click here to download final dataset", href= ""), align = "center", target = "_blank")
-              
+           helpText( a("Click here to view dataset on official NBA site", href = "http://stats.nba.com/leaders/", target = "_blank")), 
+          
+           downloadButton( "downloadData", label = "Download NBA Dataset"
+           ) 
            )
           )
            

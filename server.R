@@ -6,21 +6,25 @@ library(dplyr)
 library(caret)
 library(d3heatmap)
 
-function(input, output){
+function(input, output, session){
   
   fullStats <- read.table("FinalStats.txt")
-  # Heatmap <- read.table("Heatmapstats.txt")
-
+  FinalHeatmapStatsSixteen <- read.table("Heatmapsixteen")
   
-  # output$D3Heatmap <-
-  #     renderD3heatmap({
-  #       filter(Heatmap %>%
-  #                SEASON == input$HeatmapSeason)
-  #     
-  #       d3heatmap(
-  #         b
-  #       )
-  #     })
+  output$downloadData <- downloadHandler( filename = "NBAStats.csv"
+                                          , content = function(file) {
+                                            write.csv(fullstatsfinalfinala, file)
+                                          }
+  )
+ 
+  output$Heatmap <- 
+      renderD3heatmap({
+        # filter dataframe into filter into matrix into heatmap
+
+        d3heatmap(
+        as.matrix(FinalHeatmapStatsSixteen), scale = "column"
+        )
+      })
   
   output$NBAplot <-
 

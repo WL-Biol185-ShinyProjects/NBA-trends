@@ -5,16 +5,33 @@ read.table("FinalStats.txt") #can't open connection for some reason
 write.table(q, file="Heatmapstats.txt")
 read.table("Heatmapstats.txt") # can't read in duplicate row names 
 
+write.table(FinalHeatmapStats, file="Heatmap.txt")
 
-m<-as.matrix(FinalHeatmapStats)
+heatmap16 <-filter(FinalHeatmapStats, SEASON == 2016)
+m<-as.matrix(heatmap16)
 m
-row.names(m)<-FinalHeatmapStats$PLAYER
+row.names(m)<-heatmap16$PLAYER
 m
 n<-as.data.frame(m)
 n
 n$PLAYER <- NULL
-q<-data.matrix(n)
-q
+n
+write.table(n, file="Heatmapsixteen")
+a<-read.table("Heatmapsixteen")
+a
+
+heatmap<-read.table("Heatmap.txt")
+m<-as.matrix(heatmap)
+m
+row.names(m)<-heatmap$PLAYER
+m
+n<-as.data.frame(m)
+n
+n$PLAYER <- NULL
+n
+
+Heatmap<-data.matrix(n)
+
 
 write.csv(q, file = "heatmap.txt")
 
